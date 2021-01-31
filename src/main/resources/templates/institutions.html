@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Школи</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<div class="container mt-5">
+    <div class="row d-flex">
+        <div class="col-6">
+            <h1>Список шкіл</h1>
+        </div>
+        <div class="col-6" style="text-align: right">
+            <a th:href="'institution/add'" class="btn btn-warning">Додати школу</a>
+        </div>
+    </div>
+    <div th:each="el : ${institutions}" class="alert alert-info mt-2">
+        <h3 th:text="${el.title}"></h3>
+        <p> <b>Адреса школи:</b> <span th:text="${el.address}"></span></p>
+        <p> <b>Номер телефону:</b> <span th:text="${el.phone}"></span></p>
+        <p> <b>Сайт:</b> <span th:text="${el.site}"></span></p>
+        <a th:href="'/institution/' + ${el.id}" class="btn btn-warning">Детальніше</a>
+    </div>
+</div>
+
+<div th:insert="blocks/footer :: footer"></div>
+</body>
+</html>

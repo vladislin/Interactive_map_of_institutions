@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Блог сайту</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<div class="container mt-5 mb-5">
+    <h1>Додавання школи</h1>
+    <form action="/institution/add" method="post">
+        <input type="text" name="title" placeholder="Введіть назву школи" class="form-control"><br>
+        <input type="text" name="address" placeholder="Введіть адресу школи" class="form-control"><br>
+        <input type="url" name="site" placeholder="Вставте посилання на сайт" class="form-control"><br>
+        <input type="tel" name="phone" placeholder="Введіть номер телефону" class="form-control"><br>
+        <input type="text" name="lat" placeholder="Введіть координати(ширина)" class="form-control"><br>
+        <input type="text" name="lon" placeholder="Введіть координати(довгота)" class="form-control"><br>
+        <button type="submit" class="btn btn-success">Додати школу</button>
+    </form>
+</div>
+
+<div th:insert="blocks/footer :: footer"></div>
+</body>
+</html>
